@@ -1,0 +1,20 @@
+- hosts: all
+  become: true
+  tasks:
+    
+
+  - name: update repo index
+    ansible.builtin.dnf:
+      update_cache: true 
+      
+
+  - name: install net-tools package
+    ansible.builtin.dnf:
+      name: net-tools
+      state: latest
+
+  - name: install net-tools package
+    ansible.builtin.dnf:
+      name: "*"
+      state: latest
+
